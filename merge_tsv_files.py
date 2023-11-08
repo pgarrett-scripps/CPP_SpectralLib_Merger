@@ -44,7 +44,7 @@ def merge_tsv_files():
                         curr_peptide_charge = (peptide, charge)
 
                     # Check for 'K' in unmod_peptide and if (peptide, charge) is not in seen
-                    if 'K' in unmod_peptide and curr_peptide_charge not in seen:
+                    if 'K' in unmod_peptide and curr_peptide_charge not in seen and peptide.startswith('_('):
                         of.write(line)
 
                 # Add the last encountered peptide and charge to seen
